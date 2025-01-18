@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa Jurídica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: none;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #resposta {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Consulta Jurídica</h1>
+        <p>Digite sua dúvida jurídica abaixo e obtenha uma resposta:</p>
+        <textarea id="pergunta" placeholder="Digite sua dúvida..."></textarea>
+        <button onclick="obterResposta()">Enviar</button>
+        <div id="resposta"></div>
+    </div>
+    
+    <script>
+        function obterResposta() {
+            let pergunta = document.getElementById("pergunta").value;
+            let resposta = document.getElementById("resposta");
+            
+            if (pergunta.trim() === "") {
+                resposta.style.display = "block";
+                resposta.innerHTML = "Por favor, digite uma dúvida válida.";
+                return;
+            }
+            
+            resposta.style.display = "block";
+            resposta.innerHTML = "Sua dúvida foi recebida. Nossa equipe jurídica responderá em breve!";
+        }
+    </script>
+</body>
+</html>
